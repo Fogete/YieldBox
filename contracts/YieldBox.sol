@@ -114,10 +114,10 @@ contract YieldBox is BoringBatchable, NativeTokenFactory, ERC1155TokenReceiver {
         // Effects
         uint256 totalAmount = _tokenBalanceOf(asset);
         if (share == 0) {
-            // value of the share may be lower than the amount due to rounding, that's ok
+            // Value of the share may be lower than the amount due to rounding, that's ok
             share = amount._toShares(totalSupply[assetId], totalAmount, false);
         } else {
-            // amount may be lower than the value of share due to rounding, in that case, add 1 to amount (Always round up)
+            // Amount may be lower than the value of share due to rounding, in that case, add 1 to amount (Always round up)
             amount = share._toAmount(totalSupply[assetId], totalAmount, true);
         }
 

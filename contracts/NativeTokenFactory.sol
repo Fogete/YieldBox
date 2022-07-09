@@ -13,8 +13,8 @@ struct NativeToken {
 
 /// @title NativeTokenFactory
 /// @author BoringCrypto (@Boring_Crypto)
-/// @notice The NativeTokenFactory is a token factory to create ERC1155 tokens. This is used by YieldBox to create
-/// native tokens in YieldBox. These have many benefits:
+/// @notice The NativeTokenFactory is a token factory to create ERC1155 tokens. This is used by YieldBox to create native tokens in YieldBox.
+/// These have many benefits:
 /// - low and predictable gas usage
 /// - simplified approval
 /// - no hidden features, all these tokens behave the same
@@ -92,8 +92,8 @@ contract NativeTokenFactory is AssetRegister, BoringFactory {
         pendingOwner[tokenId] = address(0);
     }
 
-    /// @notice Create a new native token. This will be an ERC1155 token. If later it's needed as an ERC20 token it can
-    /// be wrapped into an ERC20 token. Native support for ERC1155 tokens is growing though.
+    /// @notice Create a new native token. This will be an ERC1155 token. If later it's needed as an ERC20 token it can be wrapped into an ERC20 token.
+    /// Native support for ERC1155 tokens is growing though.
     /// @param name The name of the token.
     /// @param symbol The symbol of the token.
     /// @param decimals The number of decimals of the token (this is just for display purposes). Should be set to 18 in normal cases.

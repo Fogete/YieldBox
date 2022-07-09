@@ -7,6 +7,10 @@ import "@boringcrypto/boring-solidity/contracts/libraries/BoringAddress.sol";
 
 // Written by OreNoMochi (https://github.com/OreNoMochii), BoringCrypto
 
+// ERC1155 accounts have a distinct balance for each token id, and non-fungible tokens are implemented by simply minting a single one of them.
+// Instead of deploying a new contract for each token type, a single ERC1155 token contract can hold the entire system state,
+// reducing deployment costs and complexity.
+
 contract ERC1155 is IERC1155 {
     using BoringAddress for address;
 
