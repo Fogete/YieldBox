@@ -49,10 +49,9 @@ abstract contract BaseBufferStrategy is IStrategy {
         return _reserve();
     }
 
-    /// Is called by YieldBox to signal funds have been added, the strategy may choose to act on this
-    /// When a large enough deposit is made, this should trigger the strategy to invest into the actual
-    /// strategy. This function should normally NOT be used to invest on each call as that would be costly
-    /// for small deposits.
+    /// Is called by YieldBox to signal funds have been added, the strategy may choose to act on this.
+    /// When a large enough deposit is made, this should trigger the strategy to invest into the actual strategy.
+    /// This function should normally NOT be used to invest on each call as that would be costly for small deposits.
     /// Only accept this call from the YieldBox
     function deposited(uint256) public override {
         require(msg.sender == address(yieldBox), "Not YieldBox");
@@ -69,7 +68,7 @@ abstract contract BaseBufferStrategy is IStrategy {
         }
     }
 
-    /// Is called by the YieldBox to ask the strategy to withdraw to the user
+    /// Is called by the YieldBox to ask the strategy to withdraw to the user.
     /// When a strategy keeps a little reserve for cheap withdrawals and the requested withdrawal goes over this amount,
     /// the strategy should divest enough from the strategy to complete the withdrawal and rebalance the reserve.
     /// Only accept this call from the YieldBox
