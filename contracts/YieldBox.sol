@@ -44,7 +44,7 @@ import "./YieldBoxURIBuilder.sol";
 /// @author BoringCrypto, Keno
 /// @notice The YieldBox is a vault for tokens. The stored tokens can assigned to strategies.
 /// Yield from this will go to the token depositors.
-/// Any funds transfered directly onto the YieldBox will be lost, use the deposit function instead.
+/// Any funds transferred directly onto the YieldBox will be lost, use the deposit function instead.
 contract YieldBox is BoringBatchable, NativeTokenFactory, ERC1155TokenReceiver {
     using BoringAddress for address;
     using BoringERC20 for IERC20;
@@ -98,7 +98,7 @@ contract YieldBox is BoringBatchable, NativeTokenFactory, ERC1155TokenReceiver {
     /// @param amount Token amount in native representation to deposit.
     /// @param share Token amount represented in shares to deposit. Takes precedence over `amount`.
     /// @return amountOut The amount deposited.
-    /// @return shareOut The deposited amount repesented in shares.
+    /// @return shareOut The deposited amount represented in shares.
     function depositAsset(
         uint256 assetId,
         address from,
@@ -150,7 +150,7 @@ contract YieldBox is BoringBatchable, NativeTokenFactory, ERC1155TokenReceiver {
     /// @param from which account to pull the tokens.
     /// @param to which account to push the tokens.
     /// @return amountOut The amount deposited.
-    /// @return shareOut The deposited amount repesented in shares.
+    /// @return shareOut The deposited amount represented in shares.
     function depositNFTAsset(
         uint256 assetId,
         address from,

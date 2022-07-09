@@ -80,10 +80,11 @@ contract Salary is BoringBatchable {
         // Check that the end if after or equal to the cliff
         // If they are equal, all share become payable at once, use this for a fixed term lockup
         require(cliffTimestamp <= endTimestamp, "Salary: cliff > end");
-        // You cannot have a cliff greater than 100%, important check, without the contract will lose funds
+        // You cannot have a cliff greater than 100%, important check, without it the contract will lose funds
         require(cliffPercent <= 1e18, "Salary: cliff too large");
 
-        // Fund this salary using the funder's YieldBox balance. Convert the amount to share, then transfer the share
+        // Fund this salary using the funder's YieldBox balance
+        // Convert the amount to share, then transfer the share
         share = yieldBox.toShare(assetId, amount, false);
         yieldBox.transfer(msg.sender, address(this), assetId, share);
 

@@ -37,7 +37,7 @@ struct Market {
     // totalAssetFractions and userAssetFraction are stored as the ERC1155 totalSupply and balanceOf in yieldBox
 
     // Borrow
-    // elastic = Total token amount to be repayed by borrowers
+    // elastic = Total token amount to be repaid by borrowers
     // base = Total parts of the debt held by borrowers
     Rebase totalBorrow;
     // User balances
@@ -93,7 +93,7 @@ contract LendingPair is IMasterContract {
     uint256 private constant LIQUIDATION_MULTIPLIER = 112000; // add 12%
     uint256 private constant LIQUIDATION_MULTIPLIER_PRECISION = 1e5;
 
-    /// @notice The constructor is only used for the initial master contract. Subsequent clones are initialised via `init`.
+    /// @notice The constructor is only used for the initial master contract. Subsequent clones are initialized via `init`.
     constructor(YieldBox yieldBox_) {
         yieldBox = yieldBox_;
         masterContract = this;
@@ -378,7 +378,7 @@ contract LendingPair is IMasterContract {
     /// @notice Repays a loan.
     /// @param to Address of the user this payment should go.
     /// @param part The amount to repay. See `userBorrowPart`.
-    /// @return amount The total amount repayed.
+    /// @return amount The total amount repaid.
     function repay(
         uint256 marketId,
         address to,
