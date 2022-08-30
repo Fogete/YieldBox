@@ -12,7 +12,7 @@ import "./BaseStrategy.sol";
 // solhint-disable no-empty-blocks
 
 interface ISushiBar is IERC20 {
-    function enter(uint256 amount) external;
+    function enter(uint256 amount) external; // xSushi
 
     function leave(uint256 share) external;
 }
